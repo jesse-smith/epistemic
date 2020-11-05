@@ -1,13 +1,16 @@
 Package: epistemic
-Title: What the Package Does (One Line, Title Case)
+Title: Tidy Population Modeling of Epidemics
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Jesse",
+           family = "Smith",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           email = "jessesmith96.js@gmail.com",
+           comment = c(ORCID = "0000-0001-7375-2463"))
+Description: 
+  The epistemic package is designed to bring population-level epidemic modeling
+  into the tidyverse. It is based on the epidemia package and relies on this
+  package for most model implementation.
 License: MIT + file LICENSE
 Suggests: 
     testthat
