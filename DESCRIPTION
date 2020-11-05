@@ -7,22 +7,22 @@ Authors@R:
            role = c("aut", "cre"),
            email = "jessesmith96.js@gmail.com",
            comment = c(ORCID = "0000-0001-7375-2463"))
-Description: 
-  The epistemic package is designed to bring population-level epidemic modeling
-  into the tidyverse. It is based on the epidemia package and relies on this
-  package for most model implementation.
+Description:  The epistemic package is designed to bring
+    population-level epidemic modeling into the tidyverse. It is based on
+    the epidemia package and relies on this package for most model
+    implementation.
 License: MIT + file LICENSE
-Suggests: 
-    testthat,
-    covr,
-    recipes
-Encoding: UTF-8
-LazyData: true
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
 URL: https://github.com/jesse-smith/epistemic
 BugReports: https://github.com/jesse-smith/epistemic/issues
 Imports: 
     hardhat,
     rlang,
     stats
+Suggests: 
+    covr,
+    recipes,
+    testthat
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
