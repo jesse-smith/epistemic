@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • epistemic</title>
+<title>Predict from a epistem — predict.epistem • epistemic</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Predict from a epistem — predict.epistem" />
+<meta property="og:description" content="Predict from a epistem" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,48 +106,75 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Predict from a <code>epistem</code></h1>
+    <small class="dont-index">Source: <a href='https://github.com/jesse-smith/epistemic/blob/master/R/epistem-predict.R'><code>R/epistem-predict.R</code></a></small>
+    <div class="hidden name"><code>predict.epistem.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Predict from a <code>epistem</code></p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='co'># S3 method for epistem</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>new_data</span>, type <span class='op'>=</span> <span class='st'>"numeric"</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="epistem.html">epistem()</a></code> </p>
-        </td>
-        <td><p>Fit a <code>epistem</code></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predict.epistem.html">predict(<i>&lt;epistem&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Predict from a <code>epistem</code></p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>object</th>
+      <td><p>A <code>epistem</code> object.</p></td>
+    </tr>
+    <tr>
+      <th>new_data</th>
+      <td><p>A data frame or matrix of new predictors.</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p>A single character. The type of predictions to generate.
+Valid options are:</p><ul>
+<li><p><code>"numeric"</code> for numeric predictions.</p></li>
+</ul></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Not used, but required for extensibility.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A tibble of predictions. The number of rows in the tibble is guaranteed
+to be the same as the number of rows in <code>new_data</code>.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='va'>train</span> <span class='op'>&lt;-</span> <span class='va'>mtcars</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>20</span>,<span class='op'>]</span>
+<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>mtcars</span><span class='op'>[</span><span class='fl'>21</span><span class='op'>:</span><span class='fl'>32</span>, <span class='op'>-</span><span class='fl'>1</span><span class='op'>]</span>
+
+<span class='co'># Fit</span>
+<span class='va'>mod</span> <span class='op'>&lt;-</span> <span class='fu'><a href='epistem.html'>epistem</a></span><span class='op'>(</span><span class='va'>mpg</span> <span class='op'>~</span> <span class='va'>cyl</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>drat</span><span class='op'>)</span>, <span class='va'>train</span><span class='op'>)</span>
+
+<span class='co'># Predict, with preprocessing</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>mod</span>, <span class='va'>test</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 12 x 1</span><span>
+#&gt;    .pred
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span>     1
+#&gt; </span><span style='color: #555555;'> 2</span><span>     1
+#&gt; </span><span style='color: #555555;'> 3</span><span>     1
+#&gt; </span><span style='color: #555555;'> 4</span><span>     1
+#&gt; </span><span style='color: #555555;'> 5</span><span>     1
+#&gt; </span><span style='color: #555555;'> 6</span><span>     1
+#&gt; </span><span style='color: #555555;'> 7</span><span>     1
+#&gt; </span><span style='color: #555555;'> 8</span><span>     1
+#&gt; </span><span style='color: #555555;'> 9</span><span>     1
+#&gt; </span><span style='color: #555555;'>10</span><span>     1
+#&gt; </span><span style='color: #555555;'>11</span><span>     1
+#&gt; </span><span style='color: #555555;'>12</span><span>     1</div><div class='input'>
+</div></span></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
