@@ -1,0 +1,39 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# epistemic
+
+<!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/epistemic)](https://CRAN.R-project.org/package=epistemic)
+<!-- badges: end -->
+
+The goal of epistemic is to …
+
+## Installation
+
+You can install the released version of epistemic from
+[CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("epistemic")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+``` r
+# library(epistemic)
+## basic example code
+```
+
+## Code of Conduct
+
+Please note that the epistemic project is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
